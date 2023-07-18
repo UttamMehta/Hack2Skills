@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const Mock1Schema = new mongoose.Schema({
   full_name: String,
   email: String,
-  numbe: Number,
-  cit: String,
+  number: Number,
+  city: String,
   url: String,
 });
 
