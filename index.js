@@ -1,25 +1,28 @@
-const express = require("express");
-const app = express();
-app.all("/", (req, res) => {
-  console.log("Just got a request!");
-  res.send("Yo!");
-});
-app.listen(process.env.PORT || 3000);
 
-require("dotenv").config();
-const { commondata } = require("./aggregate/aggregates");
+
+const { commondata } = require ("./aggregate/aggregates");
 
 const express = require("express");
 const cors = require("cors");
+const morgan = require("morgan");
+const path = require("path");
 
 const connectDatabase = require("./database/connectDatabase");
 
+const app = express();
+
 app.use(express.json());
 app.use(cors());
+app.use(morgan("tiny"));
 
-app.get("/", (req, res) => {
-  res.send("Hello you can get the both the mock data  with /show");
+app.get("/hello", (req, res, next) => {
+  res.send("Hello there");
+  next();
 });
+
+// app.get("/", (req, res) => {
+//   res.send("Hello you can get the both the mock data  with /show");
+// });
 
 app.get("/show", async (req, res) => {
   let arr = await commondata();
