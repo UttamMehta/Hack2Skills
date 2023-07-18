@@ -1,6 +1,4 @@
-
-
-const { commondata } = require ("./aggregate/aggregates");
+const { commondata } = require("./aggregate/aggregates");
 
 const express = require("express");
 const cors = require("cors");
@@ -20,9 +18,9 @@ app.get("/hello", (req, res, next) => {
   next();
 });
 
-// app.get("/", (req, res) => {
-//   res.send("Hello you can get the both the mock data  with /show");
-// });
+app.get("/", (req, res) => {
+  res.send("Hello you can get the both the mock data  with /show");
+});
 
 app.get("/show", async (req, res) => {
   let arr = await commondata();
