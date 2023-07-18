@@ -1,16 +1,10 @@
 {
-  "name": "08-relations",
-  "version": "1.0.0",
-  "description": "Relations in Data",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@faker-js/faker": "^7.6.0",
-    "mongoose": "^6.8.4"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.4",
+    "morgan": "^1.10.0"
   }
 }
