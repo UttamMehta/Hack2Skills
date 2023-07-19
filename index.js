@@ -21,7 +21,9 @@ app.get("/hello", (req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello you can get the both the mock data  with /show");
+  res.send(
+    "Hello you can get the both the mock data  with /showboth to get all data /first to get first data /second to get second data"
+  );
 });
 
 app.get("/showboth", async (req, res) => {
