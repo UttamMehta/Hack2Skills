@@ -6,6 +6,8 @@ const morgan = require("morgan");
 const path = require("path");
 
 const connectDatabase = require("./database/connectDatabase");
+const { Mock2 } = require("./database/Mock2");
+const { Mock1 } = require("./database/Mock1");
 
 const app = express();
 
@@ -22,8 +24,20 @@ app.get("/", (req, res) => {
   res.send("Hello you can get the both the mock data  with /show");
 });
 
-app.get("/show", async (req, res) => {
+app.get("/show_both", async (req, res) => {
   let arr = await commondata();
+
+  res.send({ data: arr });
+});
+
+app.get("/first", async (req, res) => {
+  let arr = await Mock1.find();
+
+  res.send({ data: arr });
+});
+app.get("/second", async (req, res) => {
+  let arr = await Mock2.find();
+
   res.send({ data: arr });
 });
 
