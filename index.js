@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   res.send("Hello you can get the both the mock data  with /show");
 });
 
-app.get("/show_both", async (req, res) => {
+app.get("/showboth", async (req, res) => {
   let arr = await commondata();
 
   res.send({ data: arr });

@@ -23,7 +23,7 @@ async function commondata(req, res) {
     }
     console.log(arr[0]);
 
-    // return arr;
+    return arr;
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
     throw error;
